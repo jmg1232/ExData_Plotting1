@@ -1,5 +1,5 @@
 
-setwd("C:/JHU_EDA_2014/")
+#setwd("C:/JHU_EDA_2014/")
 
 
 ############################################################################################################
@@ -29,10 +29,10 @@ tf = tempfile(tmpdir=td, fileext=".zip")
 # download into the placeholder file
 download.file(fileUrl, tf)
 # The data has now been downloaded to a temporary file, and the full path is contained in tf.
-# You’ll notice I’ve also explicitly created a temporary directory, which I’ll use for extracting the
-# data from the archive. The unzip()function can be used to query the contents of a zip file
-# and extract files to a specified location. In my case, the zip file will always contain a single file
-# in CSV format.
+# a temporary directory is usee for extracting the
+# data from the downloaded zip file. The unzip()function is used to query the contents of a zip file
+# and extract files to a specified location. The zip file contains a single text file.
+#
 # get the name of the first file in the zip archive
 fname = unzip(tf, list=TRUE)$Name[1]
 # unzip the file to the temporary directory
