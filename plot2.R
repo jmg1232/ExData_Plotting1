@@ -94,61 +94,9 @@ if(!file.exists("./data/household_power_consumption.rds")){
 # Start plot code
 ###################################################################################################
 
-
-# # Plot1
-# png("plot1.png", width=480, height=480, units="px")
-# with(ds1, hist(Global_active_power, xlab="Global Active Power (kilowatts)", main="Global Active Power", col="red"))
-# dev.off();
-
 # Plot2
 png("plot2.png", width=480, height=480, units="px")
 with(ds1, plot(DateTime, Global_active_power, type='n', ylab="Global Active Power (kilowatts)", xlab=""))
 with(ds1, lines(DateTime, Global_active_power))
 dev.off()
-
-# #Plot3
-# png("plot3.png", width=480, height=480, units="px")
-# with(ds1, plot(DateTime, Sub_metering_1, col="black", type='n', xlab="", ylab="Energy sub metering"))
-# with(ds1, lines(DateTime, Sub_metering_1, col="black"))
-# with(ds1, lines(DateTime, Sub_metering_2, col="red"))
-# with(ds1, lines(DateTime, Sub_metering_3, col="blue"))
-# legend("topright", col=c("black", "red", "blue"), lty=c(1,1,1), lwd=c(1,1,1), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-# dev.off()
-
-#Plot 4
-# Plot2
-# line plot of Voltage vs DateTime (xlab="datetime")
-# plot 3
-# line plot of Global_reactive_power vs DateTime (xlab="datetime")
-
-# png("plot4.png", width=480, height=480, units="px")
-# par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
-# #fig 1.1 repeat plot 2
-# with(ds1, plot(DateTime, Global_active_power, type='n', ylab="Global Active Power", xlab=""))
-# with(ds1, lines(DateTime, Global_active_power))
-# # fig 1.2 line plot of Voltage vs DateTime (xlab="datetime")
-# with(ds1, plot(DateTime, Voltage, type='n', ylab="Voltage", xlab="datetime"))
-# with(ds1, lines(DateTime, Voltage))
-# # fig 2.1 (repeat Fig 3)
-# with(ds1, plot(DateTime, Sub_metering_1, col="black", type='n', xlab="", ylab="Energy sub metering"))
-# with(ds1, lines(DateTime, Sub_metering_1, col="black"))
-# with(ds1, lines(DateTime, Sub_metering_2, col="red"))
-# with(ds1, lines(DateTime, Sub_metering_3, col="blue"))
-# legend("topright", col=c("black", "red", "blue"), lty=c(1,1,1), lwd=c(1,1,1), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-# # fig 2.2 line plot of Global_reactive_power vs DateTime (xlab="datetime")
-# with(ds1, plot(DateTime, Global_reactive_power, type='n', ylab="Global_reactive_power", xlab="datetime"))
-# with(ds1, lines(DateTime, Global_reactive_power))
-# dev.off()
-# 
-# 
-
-
-# if(!file.exists("data")) {
-#     dir.create("data")
-# }
-# 
-# 
-
-
-
 

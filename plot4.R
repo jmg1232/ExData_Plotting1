@@ -96,26 +96,6 @@ if(!file.exists("./data/household_power_consumption.rds")){
 
 
 
-# # Plot1
-# png("plot1.png", width=480, height=480, units="px")
-# with(ds1, hist(Global_active_power, xlab="Global Active Power (kilowatts)", main="Global Active Power", col="red"))
-# dev.off();
-# 
-# # Plot2
-# png("plot2.png", width=480, height=480, units="px")
-# with(ds1, plot(DateTime, Global_active_power, type='n', ylab="Global Active Power (kilowatts)", xlab=""))
-# with(ds1, lines(DateTime, Global_active_power))
-# dev.off()
-# 
-# #Plot3
-# png("plot3.png", width=480, height=480, units="px")
-# with(ds1, plot(DateTime, Sub_metering_1, col="black", type='n', xlab="", ylab="Energy sub metering"))
-# with(ds1, lines(DateTime, Sub_metering_1, col="black"))
-# with(ds1, lines(DateTime, Sub_metering_2, col="red"))
-# with(ds1, lines(DateTime, Sub_metering_3, col="blue"))
-# legend("topright", col=c("black", "red", "blue"), lty=c(1,1,1), lwd=c(1,1,1), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-# dev.off()
-
 #Plot 4
 # Plot2
 # line plot of Voltage vs DateTime (xlab="datetime")
@@ -141,20 +121,5 @@ with(ds1, plot(DateTime, Global_reactive_power, type='n', ylab="Global_reactive_
 with(ds1, lines(DateTime, Global_reactive_power))
 dev.off()
 
-
-
-
-
-
-# 
-# 
-# # ## read file and select rows in which date is either "1/2/2007" or "2/2/2007" and store in dataframe ds1
-# # thanks to tip in discussion forum from Fred van der zeeuw to use sql to only read in the records
-# # for the 2 dates of interest
-# ###  https://class.coursera.org/exdata-005/forum/thread?thread_id=11
-# ds1 <- read.csv.sql(fname, sep=";",sql = 'select * from file where Date = "1/2/2007" OR Date="2/2/2007" ')
-# str(ds1)
-# 
-# 
 
 
